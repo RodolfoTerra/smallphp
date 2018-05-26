@@ -1,8 +1,14 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
 
-  RewriteRule ^/?$ /index.php [NC,L]
-  RewriteRule ^teste/?$ /index.php [NC,L]
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	RewriteRule ^/?$ /index.php [NC,L]
+	RewriteRule ^teste/?$ /index.php [NC,L]
+
+	ErrorDocument 401 /app/view/error/falhaautorizacao.html
+	ErrorDocument 404 /app/view/error/naoencontrado.html
+	ErrorDocument 403 /app/view/error/acessonegado.html
+	ErrorDocument 500 /app/view/error/errointerno.html
 
 </IfModule>
 

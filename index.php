@@ -2,10 +2,10 @@
 
 	require_once 'vendor/autoload.php';
 
-	use \App\Config\Configs as Configs;
-	use \App\Config\Constants as Constants;
-	use \App\Config\Router as Router;
-	use \App\Model\Base as ConnectBase;
+	use App\Config\Configs as Configs;
+	use App\Config\Constants as Constants;
+	use App\Config\Router as Router;
+	use App\Model\Base as ConnectBase;
 
 	$config = new Configs;
 	$costants = new Constants;
@@ -48,9 +48,26 @@
 		$view = new $viewVariable;
 	}
 
+	/* No requisitions */
+	if(!isset($control)) {
+		echo '<h3>'.date('d/m/Y H:i:s').'</h3>';
+		echo '<h2>VERSION: '.VERSION.'</h2>';
+		echo '<h1>API smallPHP</h1>';
+	}
 
-	//$model->setTeste('INSERT INTO teste (nome) VALUES ("Russo4")');
 
-	//print_r($model);
+	$model->setTeste('INSERT INTO teste (nome) VALUES ("Russo4")');
+
+	$modelView = $model->getTeste('SELECT * FROM teste');
+
+	while($li = mysqli_fetch_assoc($modelView)){
+
+		echo '<table><tr>';
+		echo '<td>'.$li['id'] .'</td>';
+		echo '<td>'.$li['nome'] .'</td>';
+		echo '</tr></table>';
+	}
+
+	//print_r($control);
 
 	//echo $routerName;

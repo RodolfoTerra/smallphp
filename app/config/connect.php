@@ -41,16 +41,18 @@ class Base
 	public function getBase($query)
 	{
 		$return = $this->mysqli->query($query);
+		
 		mysqli_close($this->mysqli);
 
 		return $return;
 	}
 
 
-	public function persistModel($query)
+	public function setBase($query)
 	{
 	
     	$this->mysqli->query($query);
+
     	mysqli_close($this->mysqli);
 	}
 }

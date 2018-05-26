@@ -13,6 +13,8 @@
 		function __construct ()
 		{
 
+			define('VERSION', '1.0');
+
 			define('__APP_ROOT__', dirname(__DIR__));
 			define('WWW_ROOT', dirname(__FILE__));
 			define('DS', DIRECTORY_SEPARATOR);
