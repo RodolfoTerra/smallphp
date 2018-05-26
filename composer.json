@@ -1,0 +1,29 @@
+{
+    "name": "apiSmallPHP",
+    "description": "CRUD PHP MySQL",
+    "require": {
+        "psr/log": "^1.0"
+    },
+    "require-dev": {
+        "psr/log": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "Rodolfo Terra",
+            "email": "rodolfodesignpro@yahoo.com.br"
+        }
+    ],
+    "minimum-stability": "stable",
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "App\\Config\\": "app/config",
+            "App\\Model\\": "app/model",
+            "App\\Control\\": "app/control",
+            "App\\View\\": "app/view",
+            "App\\Lib\\Functions\\": "app/lib/functions"
+        }
+    }
+}
+

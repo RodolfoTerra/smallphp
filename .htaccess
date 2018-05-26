@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule ^/?$ /index.php [NC,L]
+  RewriteRule ^teste/?$ /index.php [NC,L]
+
+</IfModule>
+
+<files ~ "^.*\.([Hh][Tt][Aa])">
+	order allow,deny
+	deny from all
+	satisfy all
+</files>
