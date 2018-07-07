@@ -18,6 +18,7 @@
 		private	$urlRequest = "";
 		public $routerName = "";
 		public $routerConditions = "";
+		public $routerMethod = "";
 
 		function __construct ($urlRequest="")
 		{
@@ -46,17 +47,39 @@
 
 			/* verifi url requisition */
 			$urlExplode 	  = explode(DS, URL);
-			$urlExplodeCont   = sizeof($urlExplode) - 1;
-			$urlRequisition   = $urlExplode[$urlExplodeCont];
+			//print_r($urlExplode);
+			
+			$urlExplodeCont  	 = sizeof($urlExplode) - 1;
+			$urlRequisition  	 = $urlExplode[$urlExplodeCont];
 
-			$functionsNative  = new FunctionsNative;
-			$urlExtension 	  = $functionsNative::upperString($urlRequisition, 1);
+			$this->routerMethod  = $urlExplode[$urlExplodeCont-1];
 
-			$this->urlRequest = explode('?', $urlExtension);
+			$functionsNative 	 = new FunctionsNative;
+			$urlExtension 	 	 = $functionsNative::upperString($urlRequisition, 1);
+
+			$this->urlRequest 	 = explode('?', $urlExtension);
 
 			return $this->urlRequest;
 
 		}
+
+
+		// public function getMethod ()
+		// {
+
+		// 	/* verifi url requisition */
+		// 	$urlExplode 	  = explode(DS, URL);
+		// 	$urlExplodeCont   = sizeof($urlExplode) - 1;
+		// 	$urlRequisition   = $urlExplode[$urlExplodeCont];
+
+		// 	$functionsNative  = new FunctionsNative;
+		// 	$urlExtension 	  = $functionsNative::upperString($urlRequisition, 1);
+
+		// 	$this->urlRequest = explode('?', $urlExtension);
+
+		// 	return $this->urlRequest;
+
+		// }
 
 
 		public function getModel ()

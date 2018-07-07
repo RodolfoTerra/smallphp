@@ -11,28 +11,31 @@
 
 	class Teste
 	{
+		/* Router */
+		private $router = '';
+		private $returnMin = "";
+		private $returnMax = "";
+
 
 		function __construct ()
 		{
 
-			$rt = new Router;
-			$rt = $rt->getModel();
-			$model = new $rt;
+			$this->router = new Router;
+			$this->method = $this->router->routerMethod;
 
-			/* Modulo de teste  */
-			echo 'control';
+		}
 
-			$model->setTeste('INSERT INTO teste (nome) VALUES ("Russo4")');
 
-			$modelView = $model->getTeste('SELECT * FROM teste');
+		private function postTeste ()
+		{
 
-			while($li = mysqli_fetch_assoc($modelView)){
 
-				echo '<table><tr>';
-				echo '<td>'.$li['id'] .'</td>';
-				echo '<td>'.$li['nome'] .'</td>';
-				echo '</tr></table>';
-			}
+		}
+
+
+		private function getTeste ()
+		{
+
 
 		}
 

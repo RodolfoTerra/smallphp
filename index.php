@@ -1,5 +1,6 @@
 <?php
 
+
 	require_once 'vendor/autoload.php';
 
 	use App\Config\Configs as Configs;
@@ -10,10 +11,10 @@
 	$costants = new Constants;
 	$router = new Router;
 
-	$request = $router->getControl();
+	$requestRouter = $router->getControl();
 
 	/* Requisition */
-	if(!isset($request) || $request == '\\App\\Control\\') {
+	if(!isset($requestRouter) || $requestRouter == '\\App\\Control\\') {
 
 		echo '<h3>'.date('d/m/Y H:i:s').'</h3>';
 		echo '<h2>VERSION: '.VERSION.'</h2>';
@@ -21,9 +22,10 @@
 
 	}else{
 
-		$request = new $request;
+		$requestRouter = new $requestRouter;
 
 	}
+
 
 	//print_r($control);
 

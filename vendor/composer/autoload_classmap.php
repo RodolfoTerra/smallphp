@@ -11,8 +11,6 @@ return array(
     'App\\Config\\Router' => $baseDir . '/app/config/router.php',
     'App\\Control\\Teste' => $baseDir . '/app/control/teste.php',
     'App\\Lib\\Functions\\Native' => $baseDir . '/app/lib/functions/native.php',
-    'App\\Model\\Base' => $baseDir . '/app/config/connect.php',
-    'App\\Model\\Teste' => $baseDir . '/app/model/teste.php',
     'Psr\\Log\\AbstractLogger' => $vendorDir . '/psr/log/Psr/Log/AbstractLogger.php',
     'Psr\\Log\\InvalidArgumentException' => $vendorDir . '/psr/log/Psr/Log/InvalidArgumentException.php',
     'Psr\\Log\\LogLevel' => $vendorDir . '/psr/log/Psr/Log/LogLevel.php',
